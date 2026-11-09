@@ -1,7 +1,7 @@
 # OpenWrt for Nokia G-1425-MA (EcoNet EN7526GT)
 
-OpenWrt (snapshot, Linux 6.18) for the **Nokia G-1425-MA** GPON ONT as shipped by
-**Westelecom** (Ukraine). It runs from the second firmware bank; the stock firmware
+OpenWrt (snapshot, Linux 6.18) for the **Nokia G-1425-MA** GPON ONT.
+It runs from the second firmware bank; the stock firmware
 stays in the first bank as a fallback.
 
 This repository holds:
@@ -20,13 +20,13 @@ Latest: **[g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/g1425-o
 
 ## Supported hardware
 
-Verified on one unit with this hardware. Other G-1425 revisions or other ISP
+Verified on one unit with this hardware. Other G-1425 revisions or other stock
 firmwares may use a different SoC, flash layout or bootloader — check before flashing.
 
 | | |
 |---|---|
 | Device | Nokia G-1425-MA |
-| Stock firmware | `3FE46343AFIA94` (Westelecom), Linux 3.18.21 |
+| Stock firmware | `3FE46343AFIA94`, Linux 3.18.21 |
 | SoC | EcoNet **EN7526GT** (EN751221 family), MIPS 34Kc, 1 core, big-endian, 597 BogoMIPS |
 | RAM | 512 MB DDR3, ~427 MB usable |
 | Flash | 256 MB SPI NAND, Micron MT29F2G01 (2048 blocks, 163 reserved for BMT, 235 MB usable) |

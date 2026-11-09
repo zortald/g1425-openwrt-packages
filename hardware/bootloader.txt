@@ -1,4 +1,4 @@
-# Bootloader (UART J521, 115200 8N1) — Nokia G-1425-MA, Westelecom firmware
+# Bootloader (UART J521, 115200 8N1) — Nokia G-1425-MA
 
 0xbfb00834=0xeff88ce0 
 BGA IC
