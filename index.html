@@ -1,8 +1,20 @@
-<!doctype html><meta charset="utf-8"><title>G-1425 OpenWrt packages</title><style>body{font-family:sans-serif;max-width:60em;margin:2em auto;padding:0 1em}code{background:#eee;padding:.1em .3em}</style><h1>OpenWrt package feed for Nokia G-1425-MA</h1>
-<p>Kernel modules and target packages for the custom OpenWrt build on the Nokia G-1425-MA ONT (EcoNet EN7526GT / EN751221).
-downloads.openwrt.org does not build the econet target.</p>
-<h2>Firmware</h2><p>Latest image for the stock web upgrade (<code>http://192.168.1.1/upgrade.cgi</code>): <a href="https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin">g1425-openwrt-v40-web-upgrade.bin</a> — <a href="https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40">release notes</a>.</p><p>Kernel modules only install on the exact kernel they were built with, so there is one folder per kernel build.
-The firmware adds its folder to apk at first boot:</p>
-<p><code>https://zortald.github.io/g1425-openwrt-packages/&lt;kernel-hash&gt;/packages.adb</code></p>
-<table border=1 cellpadding=4><tr><th>Folder</th><th>Kernel</th><th>Packages</th></tr>
-<tr><td><a href="af8c55194775dcae215a7df4c97d3160/">af8c55194775dcae215a7df4c97d3160</a></td><td>6.18.60~af8c55194775dcae215a7df4c97d3160-r1</td><td>1121</td></tr></table>
+<!doctype html><meta charset="utf-8"><title>OpenWrt for Nokia G-1425-MA</title>
+<style>body{font-family:sans-serif;max-width:56em;margin:2em auto;padding:0 1em;line-height:1.45}code{background:#eee;padding:.1em .3em}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:.3em .6em;text-align:left}</style>
+<h1>OpenWrt for Nokia G-1425-MA (EcoNet EN7526GT)</h1>
+<p>OpenWrt snapshot (Linux 6.18) for the Nokia G-1425-MA GPON ONT with Westelecom firmware. Runs from the second firmware bank; stock stays in the first bank as a fallback.</p>
+<p><b>Download:</b> <a href="https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin">g1425-openwrt-v40-web-upgrade.bin</a> (<a href="https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40">release notes</a>) ·
+<b>Docs:</b> <a href="https://github.com/zortald/g1425-openwrt-packages#readme">English</a>, <a href="https://github.com/zortald/g1425-openwrt-packages/blob/main/README.ru.md">Русский</a> ·
+<b>Hardware dumps:</b> <a href="https://github.com/zortald/g1425-openwrt-packages/tree/main/hardware">bootloader, dmesg, /proc</a></p>
+<h2>Verified hardware</h2>
+<table>
+<tr><td>SoC</td><td>EcoNet EN7526GT (EN751221), MIPS 34Kc, big-endian</td></tr>
+<tr><td>RAM / Flash</td><td>512 MB DDR3 / 256 MB SPI NAND (Micron MT29F2G01)</td></tr>
+<tr><td>Wi-Fi</td><td>MT7603E 2.4 GHz + MT7662E 5 GHz 802.11ac 2×2</td></tr>
+<tr><td>Ethernet / USB</td><td>4 × 1 GbE (MT7530) / 1 × USB 3.0</td></tr>
+<tr><td>Stock firmware</td><td>3FE46343AFIA94</td></tr>
+</table>
+<h2>Package feed</h2>
+<p>Kernel modules and target packages; one folder per kernel build. The firmware adds its folder to apk at first boot:
+<code>https://zortald.github.io/g1425-openwrt-packages/&lt;kernel-hash&gt;/packages.adb</code></p>
+<table><tr><th>Folder</th><th>Kernel</th><th>Packages</th><th>Firmware</th></tr>
+<tr><td><a href="af8c55194775dcae215a7df4c97d3160/">af8c55194775dcae215a7df4c97d3160</a></td><td>6.18.60~af8c55194775dcae215a7df4c97d3160-r1</td><td>1121</td><td>v38–v40</td></tr></table>

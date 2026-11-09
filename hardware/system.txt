@@ -1,0 +1,57 @@
+# OpenWrt 6.18.60 on Nokia G-1425-MA — /proc and system info
+
+### uname -a
+Linux G1425-test 6.18.60 #0 SMP Sun Nov  8 17:21:12 2026 mips GNU/Linux
+
+### /etc/openwrt_release
+DISTRIB_ID='OpenWrt'
+DISTRIB_RELEASE='SNAPSHOT'
+DISTRIB_REVISION='r30000-7edc67adad'
+DISTRIB_TARGET='econet/en751221'
+DISTRIB_ARCH='mips_24kc'
+DISTRIB_DESCRIPTION='OpenWrt SNAPSHOT r30000-7edc67adad'
+DISTRIB_TAINTS=''
+
+### /proc/cpuinfo
+system type		: EcoNet-EN75xx
+machine			: Nokia G-1425-MA (EN7526GT)
+processor		: 0
+cpu model		: MIPS 34Kc V5.8
+BogoMIPS		: 597.60
+wait instruction	: yes
+microsecond timers	: yes
+tlb_entries		: 32
+extra interrupt vector	: yes
+hardware watchpoint	: yes, count: 4, address/irw mask: [0x0ffc, 0x0ffc, 0x0ffb, 0x0ffb]
+isa			: mips1 mips2 mips32r1 mips32r2
+ASEs implemented	: mips16 dsp mt
+Options implemented	: tlb 4kex 4k_cache 32fpr prefetch mcheck ejtag llsc dc_aliases userlocal perf_cntr_intr_bit cdmm perf mm_full
+shadow register sets	: 1
+kscratch registers	: 0
+package			: 0
+core			: 0
+VCED exceptions		: not available
+VCEI exceptions		: not available
+
+
+### free -m
+              total        used        free      shared  buff/cache   available
+Mem:         436968       52920      350232         288       33816      342420
+Swap:             0           0           0
+
+### /proc/mtd
+dev:    size   erasesize  name
+mtd0: 00040000 00020000 "bootloader"
+mtd1: 00040000 00020000 "romfile"
+mtd2: 00300000 00020000 "stock_kernel"
+mtd3: 01400000 00020000 "stock_rootfs"
+mtd4: 00300000 00020000 "kernel_slave"
+mtd5: 01400000 00020000 "rootfs_slave"
+mtd6: 00040000 00020000 "bosa"
+mtd7: 00040000 00020000 "ri"
+mtd8: 00040000 00020000 "flag"
+mtd9: 00040000 00020000 "flagback"
+mtd10: 00a00000 00020000 "stock_config"
+mtd11: 0a000000 00020000 "openwrt_data"
+mtd12: 00a00000 00020000 "stock_log"
+

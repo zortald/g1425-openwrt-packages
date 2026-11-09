@@ -1,0 +1,182 @@
+# OpenWrt 6.18.60 on Nokia G-1425-MA — kernel log, hardware-related lines
+
+[    0.000000] CPU0 revision is: 00019558 (MIPS 34Kc)
+[    0.000000] MIPS: machine is Nokia G-1425-MA (EN7526GT)
+[    0.000000] OF: reserved mem: Reserved memory: No reserved-memory node in the DT
+[    0.000000] percpu: Embedded 12 pages/cpu s18448 r8192 d22512 u49152
+[    0.000000] pcpu-alloc: s18448 r8192 d22512 u49152 alloc=12*4096
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Kernel command line: console=ttyS0,115200 earlycon loglevel=8 ubi.mtd=rootfs_slave ubi.mtd=openwrt_data
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=2 to nr_cpu_ids=1.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] RCU Tasks Trace: Setting shift to 0 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=1.
+[    0.000000] NR_IRQS: 256
+[    0.000000] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.000000] clocksource: timer: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 9556302233 ns
+[    0.000003] sched_clock: 32 bits at 200MHz, resolution 5ns, wraps every 10737418237ns
+[    0.017125] timer: using 200.000 MHz high precision timer (percpu mode)
+[    0.200385] smp: Bringing up secondary CPUs ...
+[    0.210359] smp: Brought up 1 node, 1 CPU
+[    0.219434] Memory: 434700K/450560K available (7199K kernel code, 659K rwdata, 1044K rodata, 1264K init, 229K bss, 14856K reserved, 0K cma-reserved)
+[    0.255290] posixtimers hash table entries: 512 (order: 0, 4096 bytes, linear)
+[    0.316652] /pcie@1fb81000: Fixed dependency cycle(s) with /pcie@1fb81000/interrupt-controller
+[    0.349312] /pcie@1fb83000: Fixed dependency cycle(s) with /pcie@1fb83000/interrupt-controller
+[    0.392278] clocksource: Switched to clocksource timer
+[    0.586937] PCI: CLS 0 bytes, default 32
+[    0.631041] jffs2: version 2.2 (NAND) (SUMMARY) (ZLIB) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+[    0.682973] mtk-pcie 1fb81000.pcie: host bridge /pcie@1fb81000 ranges:
+[    0.697438] mtk-pcie 1fb81000.pcie:       IO 0x001f600000..0x001f607fff -> 0x0000000000
+[    0.715172] mtk-pcie 1fb81000.pcie:      MEM 0x0020000000..0x0027ffffff -> 0x0020000000
+[    1.224849] mtk-pcie 1fb81000.pcie: PCI host bridge to bus 0000:00
+[    1.238450] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.250509] pci_bus 0000:00: root bus resource [io  0x0000-0x7fff]
+[    1.264112] pci_bus 0000:00: root bus resource [mem 0x20000000-0x27ffffff]
+[    1.279413] pci 0000:00:00.0: [14c3:0810] type 01 class 0x060400 PCIe Root Port
+[    1.295757] pci 0000:00:00.0: PCI bridge to [bus 00]
+[    1.306675] pci 0000:00:00.0:   bridge window [mem 0x00000000-0x000fffff]
+[    1.324371] pci 0000:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    1.342832] pci 0000:01:00.0: [14c3:7603] type 00 class 0x028000 PCIe Endpoint
+[    1.359119] pci 0000:01:00.0: BAR 0 [mem 0x00000000-0x000fffff]
+[    1.372888] pci 0000:01:00.0: PME# supported from D0 D3hot D3cold
+[    1.387108] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+[    1.398666] pci_bus 0000:01: busn_res: [bus 01-ff] end is updated to 01
+[    1.413290] pci 0000:00:00.0: bridge window [mem 0x20000000-0x200fffff]: assigned
+[    1.429710] pci 0000:01:00.0: BAR 0 [mem 0x20000000-0x200fffff]: assigned
+[    1.444683] pci 0000:00:00.0: PCI bridge to [bus 01]
+[    1.455567] pci 0000:00:00.0:   bridge window [mem 0x20000000-0x200fffff]
+[    1.470558] pci_bus 0000:00: resource 4 [io  0x0000-0x7fff]
+[    1.482821] pci_bus 0000:00: resource 5 [mem 0x20000000-0x27ffffff]
+[    1.496537] pci_bus 0000:01: resource 1 [mem 0x20000000-0x200fffff]
+[    1.511018] pcieport 0000:00:00.0: enabling device (0000 -> 0002)
+[    1.527970] pcieport 0000:00:00.0: link retrained, speed 2.5 GT/s PCIe
+[    1.542865] mtk-pcie 1fb83000.pcie: host bridge /pcie@1fb83000 ranges:
+[    1.557272] mtk-pcie 1fb83000.pcie:       IO 0x001f608000..0x001f60ffff -> 0x0000000000
+[    1.574905] mtk-pcie 1fb83000.pcie:      MEM 0x0028000000..0x002fffffff -> 0x0028000000
+[    1.705234] mtk-pcie 1fb83000.pcie: PCI host bridge to bus 0001:00
+[    1.718830] pci_bus 0001:00: root bus resource [bus 00-ff]
+[    1.730895] pci_bus 0001:00: root bus resource [io  0x8000-0xffff] (bus address [0x0000-0x7fff])
+[    1.750224] pci_bus 0001:00: root bus resource [mem 0x28000000-0x2fffffff]
+[    1.765734] pci 0001:00:01.0: [14c3:0811] type 01 class 0x060400 PCIe Root Port
+[    1.782058] pci 0001:00:01.0: PCI bridge to [bus 00]
+[    1.793049] pci 0001:00:01.0:   bridge window [mem 0x00000000-0x000fffff]
+[    1.810473] pci 0001:00:01.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    1.828848] pci 0001:01:00.0: [14c3:7662] type 00 class 0x028000 PCIe Endpoint
+[    1.845160] pci 0001:01:00.0: BAR 0 [mem 0x00000000-0x000fffff 64bit]
+[    1.859332] pci 0001:01:00.0: ROM [mem 0x00000000-0x0000ffff pref]
+[    1.873656] pci 0001:01:00.0: PME# supported from D0 D3hot D3cold
+[    1.887911] pci 0001:00:01.0: PCI bridge to [bus 01-ff]
+[    1.899438] pci_bus 0001:01: busn_res: [bus 01-ff] end is updated to 01
+[    1.914044] pci 0001:00:01.0: bridge window [mem 0x00100000-0x001fffff] to [bus 01] add_size 100000 add_align 100000
+[    1.937221] pci 0001:00:01.0: bridge window [mem 0x28000000-0x281fffff]: assigned
+[    1.953699] pci 0001:01:00.0: BAR 0 [mem 0x28000000-0x280fffff 64bit]: assigned
+[    1.969812] pci 0001:01:00.0: ROM [mem 0x28100000-0x2810ffff pref]: assigned
+[    1.985346] pci 0001:00:01.0: PCI bridge to [bus 01]
+[    1.996238] pci 0001:00:01.0:   bridge window [mem 0x28000000-0x281fffff]
+[    2.011225] pci_bus 0001:00: resource 4 [io  0x8000-0xffff]
+[    2.023490] pci_bus 0001:00: resource 5 [mem 0x28000000-0x2fffffff]
+[    2.037234] pci_bus 0001:01: resource 1 [mem 0x28000000-0x281fffff]
+[    2.051726] pcieport 0001:00:01.0: enabling device (0000 -> 0002)
+[    2.068799] pcieport 0001:00:01.0: link retrained, speed 2.5 GT/s PCIe
+[    2.084182] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    2.104196] printk: legacy console [ttyS0] disabled
+[    2.115687] 1fbf0000.serial: ttyS0 at MMIO 0x1fbf0000 (irq = 10, base_baud = 115200) is a 16550
+[    2.134927] printk: legacy console [ttyS0] enabled
+[    2.201421] mtdoops: mtd device (mtddev=name/number) must be supplied
+[    2.213932] spi-nand spi0.0: Micron SPI NAND was found.
+[    2.219205] spi-nand spi0.0: 256 MiB, block size: 128 KiB, page size: 2048, OOB size: 128
+[    2.229108] en75_bmt: found BMT in block 2047
+[    2.371802] en75_bmt: found BBT in block 1885
+[    2.376293] en75_bmt: BBT & BMT found
+[    2.379972] en75_bmt: blocks: total: 2048, user: 1885, factory_bad: 0, worn: 0 reserve: 163
+[    2.388371] en75_bmt: 235 MiB usable space
+[    2.393768] 13 fixed-partitions partitions found on MTD device spi0.0
+[    2.404493] Creating 13 MTD partitions on "spi0.0":
+[    2.871718] ubi0: attaching mtd5
+[    3.131123] ubi0: scanning is finished
+[    3.183928] ubi0: attached mtd5 (name "rootfs_slave", size 20 MiB)
+[    3.190167] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    3.197183] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    3.204032] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    3.211013] ubi0: good PEBs: 160, bad PEBs: 0, corrupted PEBs: 0
+[    3.217093] ubi0: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    3.224377] ubi0: max/mean erase counter: 1/0, WL threshold: 4096, image sequence number: <n>
+[    3.233391] ubi0: available PEBs: 63, total reserved PEBs: 97, PEBs reserved for bad PEB handling: 24
+[    3.242889] ubi0: background thread "ubi_bgt0d" started, PID 397
+[    3.250987] block ubiblock0_0: created from ubi0:0(rootfs)
+[    3.264447] ubi1: attaching mtd11
+[    5.281852] ubi1: scanning is finished
+[    5.308856] ubi1: attached mtd11 (name "openwrt_data", size 160 MiB)
+[    5.315401] ubi1: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    5.322337] ubi1: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    5.329138] ubi1: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    5.336144] ubi1: good PEBs: 1280, bad PEBs: 0, corrupted PEBs: 0
+[    5.342288] ubi1: user volume: 2, internal volumes: 1, max. volumes count: 128
+[    5.349529] ubi1: max/mean erase counter: 18/9, WL threshold: 4096, image sequence number: <n>
+[    5.358703] ubi1: available PEBs: 0, total reserved PEBs: 1280, PEBs reserved for bad PEB handling: 24
+[    5.372994] clk: Disabling unused clocks
+[    5.377204] ubi1: background thread "ubi_bgt1d" started, PID 402
+[    5.413769] Freeing unused kernel image (initmem) memory: 1264K
+[    7.918964] xhci-mtk 1fb90000.usb: xHCI Host Controller
+[    7.924501] xhci-mtk 1fb90000.usb: new USB bus registered, assigned bus number 1
+[    7.936328] xhci-mtk 1fb90000.usb: hcc params 0x01401198 hci version 0x96 quirks 0x0000000000280810
+[    7.945717] xhci-mtk 1fb90000.usb: irq 17, io mem 0x1fb90000
+[    7.951744] xhci-mtk 1fb90000.usb: xHCI Host Controller
+[    7.957117] xhci-mtk 1fb90000.usb: new USB bus registered, assigned bus number 2
+[    7.964599] xhci-mtk 1fb90000.usb: Host supports USB 3.0 SuperSpeed
+[    7.972977] hub 1-0:1.0: USB hub found
+[    7.985217] hub 2-0:1.0: USB hub found
+[   10.675666] mtdblock: MTD device 'ri' is NAND, please consider using UBI block devices instead.
+[   25.533800] econet_eth 1fb50000.ethernet: port 1 (LAN) registered with xx:xx:xx:xx:xx:xx
+[   26.525206] mt7530-mmio 1fb58000.switch: no interrupt support
+[   26.675091] mt7530-mdio mt7530-0:1f: no interrupt support
+[   28.273754] mt7530-mmio 1fb58000.switch: configuring for fixed/trgmii link mode
+[   28.281251] mt7530-mmio 1fb58000.switch: configuring for fixed/internal link mode
+[   28.289001] mt7530-mmio 1fb58000.switch: Link is Up - 1Gbps/Full - flow control off
+[   28.314374] mt7530-mmio 1fb58000.switch: Link is Up - 1Gbps/Full - flow control off
+[   28.323568] mt7530-mdio mt7530-0:1f: configuring for fixed/trgmii link mode
+[   28.345888] mt7530-mdio mt7530-0:1f wan (uninitialized): PHY [mt7530-1:01] driver [MediaTek MT7530 PHY] (irq=POLL)
+[   28.392870] mt7530-mdio mt7530-0:1f lan2 (uninitialized): PHY [mt7530-1:02] driver [MediaTek MT7530 PHY] (irq=POLL)
+[   28.440980] mt7530-mdio mt7530-0:1f lan3 (uninitialized): PHY [mt7530-1:03] driver [MediaTek MT7530 PHY] (irq=POLL)
+[   28.572523] mt7530-mdio mt7530-0:1f lan4 (uninitialized): PHY [mt7530-1:04] driver [MediaTek MT7530 PHY] (irq=POLL)
+[   28.614135] econet_eth 1fb50000.ethernet eth0: entered promiscuous mode
+[   28.620927] DSA: tree 0 setup
+[   28.846181] mt7530-mdio mt7530-0:1f: TRGMII lane 0: ++++++++++++++++++++++++X+++++++++++++++++++++++++.............. tap 24 old 0
+[   29.449464] mt7530-mdio mt7530-0:1f: TRGMII lane 1: +++++++++++++++++++++X+++++++++++++++++++++..................... tap 21 old 0
+[   29.485781] mt7603e 0000:01:00.0: enabling device (0000 -> 0002)
+[   29.502939] mt7603e 0000:01:00.0: ASIC revision: 76030010
+[   29.524814] mt7603e 0000:01:00.0: Firmware Version: ap_pcie
+[   29.582608] mt7603e 0000:01:00.0: firmware init done
+[   29.813960] ieee80211 phy0: Selected rate control algorithm 'minstrel_ht'
+[   29.912967] mt76x2e 0001:01:00.0: enabling device (0000 -> 0002)
+[   29.919363] mt76x2e 0001:01:00.0: ASIC revision: 76120044
+[   29.929306] mt7530-mdio mt7530-0:1f: TRGMII lane 2: +++++++++++++++++++++++X+++++++++++++++++++++++................. tap 23 old 0
+[   30.280253] mt7530-mdio mt7530-0:1f: TRGMII lane 3: ++++++++++++++++++X+++++++++++++++++++.......................... tap 18 old 0
+[   30.566341] mt7530-mdio mt7530-0:1f: TRGMII lane 4: +++++++++++++++++++++X++++++++++++++++++++++.................... tap 21 old 0
+[   30.593480] mt7530-mmio 1fb58000.switch: TRGMII lane 0: .+++++++++++++++++++++++++++++++X+++++++++++++++++++++++++++++++ tap 32 old 16
+[   30.623642] mt76x2e 0001:01:00.0: ROM patch build: 20141115060606a
+[   30.642964] mt76x2e 0001:01:00.0: Firmware Version: 0.0.00
+[   30.662855] mt7530-mmio 1fb58000.switch: TRGMII lane 1: +++++++++++++++++++++++++++++++X++++++++++++++++++++++++++++++++ tap 31 old 16
+[   30.682516] mt76x2e 0001:01:00.0: Firmware running!
+[   30.704288] mt7530-mmio 1fb58000.switch: TRGMII lane 2: ..++++++++++++++++++++++++++++++X+++++++++++++++++++++++++++++++ tap 32 old 16
+[   30.739803] mt7530-mmio 1fb58000.switch: TRGMII lane 3: +++++++++++++++++++++++++++++++X++++++++++++++++++++++++++++++++ tap 31 old 16
+[   30.764086] ieee80211 phy1: Selected rate control algorithm 'minstrel_ht'
+[   30.806463] mt7530-mmio 1fb58000.switch: TRGMII lane 4: +++++++++++++++++++++++++++++++X++++++++++++++++++++++++++++++++ tap 31 old 16
+[   30.848612] mt7530-mmio 1fb58000.switch: TRGMII inter-switch link initialized
+[   30.855956] mt7530-mdio mt7530-0:1f: Link is Up - 1Gbps/Full - flow control off
+[   53.362489] mt7530-mdio mt7530-0:1f lan2: configuring for phy/gmii link mode
+[   53.403986] mt7530-mdio mt7530-0:1f lan2: entered allmulticast mode
+[   53.410291] econet_eth 1fb50000.ethernet eth0: entered allmulticast mode
+[   53.687445] mt7530-mdio mt7530-0:1f lan2: entered promiscuous mode
+[   54.005204] mt7530-mdio mt7530-0:1f lan3: configuring for phy/gmii link mode
+[   54.096250] mt7530-mdio mt7530-0:1f lan3: entered allmulticast mode
+[   54.180406] mt7530-mdio mt7530-0:1f lan3: entered promiscuous mode
+[   54.445312] mt7530-mdio mt7530-0:1f lan4: configuring for phy/gmii link mode
+[   54.476573] mt7530-mdio mt7530-0:1f lan4: entered allmulticast mode
+[   54.739161] mt7530-mdio mt7530-0:1f lan4: entered promiscuous mode
+[   55.088661] mt7530-mdio mt7530-0:1f wan: configuring for phy/gmii link mode
+[   56.912420] mt7530-mdio mt7530-0:1f lan2: Link is Up - 1Gbps/Full - flow control rx/tx
+[   63.321232] mt7603e 0000:01:00.0 phy0-ap0: entered allmulticast mode
+[   63.328128] mt7603e 0000:01:00.0 phy0-ap0: entered promiscuous mode
+[   71.401400] mt76x2e 0001:01:00.0 phy1-ap0: entered allmulticast mode
+[   71.408314] mt76x2e 0001:01:00.0 phy1-ap0: entered promiscuous mode

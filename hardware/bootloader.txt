@@ -1,0 +1,34 @@
+# Bootloader (UART J521, 115200 8N1) — Nokia G-1425-MA, Westelecom firmware
+
+0xbfb00834=0xeff88ce0 
+BGA IC
+Xtal:1
+DDR3 init.
+DRAMC init done. 
+Calculate size.
+DRAM size=512MB(supported max size)
+Set new TRFC.
+ddr-1066
+7512DRAMC V1.2.2 (0)
+Set SPI Flash Clock to 25 Mhz
+Output Enable Gpio 6 for 7526G!
+EN751221 at Thu Sep 23 14:38:17 CST 2021 version 1.1 free bootbase
+Memory size 512MB
+Set SPI Flash Clock to 25 Mhz
+spi_nand_probe: mfr_id=0x2c, dev_id=0x24
+Dected SPI NAND Flash : _SPI_NAND_DEVICE_ID_MT29F2G01, Flash Size=0x10000000
+bmt pool size: 163 
+BMT & BBT Init Success 
+tclinux partition size = 0x1000000, real size = 0x1436a35
+tclinux partition size < its real size
+tclinux_slave partition size = 0x1000000, real size = 0xfb84ec5d
+tclinux_slave partition size < its real size
+Invalid Power GPIO, just return and don't turn on Power LED 
+Press any key in 3 secs to enter boot command mode.
+....................
+********cur flag info*************
+active = 1
+curimg = 1
+startok = 1
+count = 14
+********new flag info*************
