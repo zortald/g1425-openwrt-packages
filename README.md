@@ -4,6 +4,12 @@ Kernel modules and target packages for the custom OpenWrt build that runs on the
 Nokia G-1425-MA ONT. downloads.openwrt.org does not build the econet target, so
 these packages are not available there.
 
+## Firmware
+
+Image for the stock web upgrade (`http://192.168.1.1/upgrade.cgi`): [g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin) — see the [v40 release](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40).
+
+## Packages
+
 Kernel modules only install on the exact kernel they were built with, so there is
 one folder per kernel build, named by the kernel package hash. Each firmware image
 adds its own folder to apk at first boot:
