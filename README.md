@@ -31,7 +31,8 @@ Other revisions or stock firmwares may differ again — check before flashing.
 |---|---|---|
 | Release | [v40](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40) | [g1426ma-v5](https://github.com/zortald/g1425-openwrt-packages/releases/tag/g1426ma-v5) |
 | Install from stock | [g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin) | [g1426-openwrt-v5-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v5/g1426-openwrt-v5-web-upgrade.bin) |
-| Update from OpenWrt | — (reinstall from stock) | [g1426-openwrt-v5-sysupgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v5/g1426-openwrt-v5-sysupgrade.bin) (`sysupgrade -n`) |
+| Pre-release (not yet tested on hardware) | [v41](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v41): 5 GHz calibration from stock, usteer, first `sysupgrade` | — |
+| Update from OpenWrt | — (reinstall from stock; `sysupgrade` from v41) | [g1426-openwrt-v5-sysupgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v5/g1426-openwrt-v5-sysupgrade.bin) (`sysupgrade -n`) |
 
 ## Hardware
 
@@ -142,6 +143,7 @@ the build key shipped in the firmware.
 | Folder | Model | Architecture | Kernel | Firmware |
 |---|---|---|---|---|
 | [af8c55194775dcae215a7df4c97d3160](af8c55194775dcae215a7df4c97d3160/) | G-1425-MA | `mips_24kc` | 6.18.60~af8c5519…-r1 | v38–v40 |
+| [7d991811584158991fd8b3ea9fb13c0b](7d991811584158991fd8b3ea9fb13c0b/) | G-1425-MA | `mips_24kc` | 6.18.60~7d991811…-r1 | v41 |
 | [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) | G-1426-MA | `mipsel_24kc` | 6.18.60~6f45af18…-r1 | g1426ma-v5 |
 
 ## Back to stock
@@ -165,7 +167,7 @@ G-1426-MA — `swimg 1`, `reset`.
 |---|---|---|
 | GPON | not supported | not supported |
 | CPU | one core | all four threads |
-| Updates | reinstall from stock (no `sysupgrade`) | `sysupgrade` |
+| Updates | reinstall from stock; `sysupgrade` from v41 (pre-release) | `sysupgrade` |
 | Other | — | phone port not supported; Wi-Fi uses one of the two PCIe links of the MT7915 |
 
 Both are snapshot builds: userspace packages from the official feed may occasionally need
