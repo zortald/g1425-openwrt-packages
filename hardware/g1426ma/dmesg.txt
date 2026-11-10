@@ -1,0 +1,179 @@
+# OpenWrt 6.18.60 on Nokia G-1426-MA — kernel log, hardware-related lines
+
+[    0.000000] Linux version 6.18.60 (build@c27a0648ed26) (mipsel-openwrt-linux-musl-gcc (OpenWrt GCC 14.4.0 toolchain-c0e63334e4) 14.4.0, GNU ld (GNU Binutils) 2.46.1) #0 SMP Sun Nov  8 17:21:12 2026
+[    0.000000] CPU0 revision is: 0001992f (MIPS 1004Kc)
+[    0.000000] MIPS: machine is Nokia G-1426-MA
+[    0.000000] Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+[    0.000000] MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+[    0.000000]   Normal   [mem 0x0000000000000000-0x000000001bffffff]
+[    0.000000]   node   0: [mem 0x0000000000000000-0x000000001bffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x000000001bffffff]
+[    0.000000] Kernel command line: console=ttyS0,115200 loglevel=8 ubi.mtd=ubi ubi.mtd=openwrt_data
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+[    0.016737] Calibrating delay loop... 597.60 BogoMIPS (lpj=2988032)
+[    0.098331] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.106315] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.143358] smp: Bringing up secondary CPUs ...
+[    0.149190] Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+[    0.149218] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+[    0.149234] MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+[    0.149363] CPU1 revision is: 0001992f (MIPS 1004Kc)
+[    0.151373] Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+[    0.151400] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+[    0.151413] MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+[    0.151517] CPU2 revision is: 0001992f (MIPS 1004Kc)
+[    0.161660] Primary instruction cache 32kB, VIPT, 4-way, linesize 32 bytes.
+[    0.161687] Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+[    0.161700] MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+[    0.161811] CPU3 revision is: 0001992f (MIPS 1004Kc)
+[    0.161996] smp: Brought up 1 node, 4 CPUs
+[    0.250941] Memory: 438264K/458752K available (9387K kernel code, 658K rwdata, 2024K rodata, 1296K init, 235K bss, 18300K reserved, 0K cma-reserved)
+[    0.327533] /pcie@1fb83000: Fixed dependency cycle(s) with /pcie@1fb83000/interrupt-controller
+[    0.522481] mtk-pcie 1fb83000.pcie: host bridge /pcie@1fb83000 ranges:
+[    0.529715] mtk-pcie 1fb83000.pcie:       IO 0x001f610000..0x001f61ffff -> 0x0000000000
+[    0.538480] mtk-pcie 1fb83000.pcie:      MEM 0x0028000000..0x002fffffff -> 0x0028000000
+[    1.064160] mtk-pcie 1fb83000.pcie: PCI host bridge to bus 0001:00
+[    1.070980] pci_bus 0001:00: root bus resource [bus 00-ff]
+[    1.076964] pci_bus 0001:00: root bus resource [io  0x0000-0xffff]
+[    1.083714] pci_bus 0001:00: root bus resource [mem 0x28000000-0x2fffffff]
+[    1.091655] pci 0001:00:01.0: [14c3:0811] type 01 class 0x060400 PCIe Root Port
+[    1.099925] pci 0001:00:01.0: PCI bridge to [bus 00]
+[    1.105396] pci 0001:00:01.0:   bridge window [mem 0x00000000-0x000fffff]
+[    1.115458] pci 0001:00:01.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    1.125112] pci 0001:01:00.0: [14c3:7915] type 00 class 0x000280 PCIe Endpoint
+[    1.133438] pci 0001:01:00.0: BAR 0 [mem 0x00000000-0x000fffff 64bit pref]
+[    1.140972] pci 0001:01:00.0: BAR 2 [mem 0x00000000-0x00003fff 64bit pref]
+[    1.148511] pci 0001:01:00.0: BAR 4 [mem 0x00000000-0x00000fff 64bit pref]
+[    1.156809] pci 0001:01:00.0: supports D1 D2
+[    1.161414] pci 0001:01:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    1.168961] pci 0001:01:00.0: 2.000 Gb/s available PCIe bandwidth, limited by 2.5 GT/s PCIe x1 link at 0001:00:01.0 (capable of 4.000 Gb/s with 5.0 GT/s PCIe x1 link)
+[    1.185722] pci 0001:00:01.0: PCI bridge to [bus 01-ff]
+[    1.191426] pci_bus 0001:01: busn_res: [bus 01-ff] end is updated to 01
+[    1.198758] pci 0001:00:01.0: bridge window [mem 0x28000000-0x281fffff]: assigned
+[    1.206956] pci 0001:01:00.0: BAR 0 [mem 0x28000000-0x280fffff 64bit pref]: assigned
+[    1.215522] pci 0001:01:00.0: BAR 2 [mem 0x28100000-0x28103fff 64bit pref]: assigned
+[    1.224036] pci 0001:01:00.0: BAR 4 [mem 0x28104000-0x28104fff 64bit pref]: assigned
+[    1.232574] pci 0001:00:01.0: PCI bridge to [bus 01]
+[    1.237999] pci 0001:00:01.0:   bridge window [mem 0x28000000-0x281fffff]
+[    1.245491] pci_bus 0001:00: resource 4 [io  0x0000-0xffff]
+[    1.251526] pci_bus 0001:00: resource 5 [mem 0x28000000-0x2fffffff]
+[    1.258435] pci_bus 0001:01: resource 1 [mem 0x28000000-0x281fffff]
+[    1.284759] pci 0001:00:01.0: link retrained, speed 5.0 GT/s PCIe
+[    1.307725] printk: legacy console [ttyS0] disabled
+[    1.314087] 1fbf0000.serial: ttyS0 at MMIO 0x1fbf0000 (irq = 22, base_baud = 460800) is a Airoha 16550
+[    1.324373] printk: legacy console [ttyS0] enabled
+[    1.359958] spi-nand spi0.0: Micron SPI NAND was found.
+[    1.365292] spi-nand spi0.0: 256 MiB, block size: 128 KiB, page size: 2048, OOB size: 128
+[    1.374327] en75_bmt: found BMT in block 2047
+[    1.445346] en75_bmt: found BBT in block 1905
+[    1.449764] en75_bmt: BBT & BMT found
+[    1.453431] en75_bmt: blocks: total: 2048, user: 1905, factory_bad: 0, worn: 0 reserve: 143
+[    1.461845] en75_bmt: 238 MiB usable space
+[    1.464930] 15 fixed-partitions partitions found on MTD device spi0.0
+[    1.475565] Creating 15 MTD partitions on "spi0.0":
+[    1.480459] 0x000000000000-0x000000040000 : "bootloader"
+[    1.488314] 0x000000040000-0x000000080000 : "romfile"
+[    1.495569] 0x000000080000-0x000002300000 : "tclinux"
+[    1.598629] 0x000000080000-0x000000480000 : "kernel"
+[    1.604765] 0x000000480000-0x0000022c0000 : "ubi"
+[    1.610757] 0x0000022c0000-0x000002300000 : "factory"
+[    1.617288] 0x000002300000-0x000004580000 : "tclinux_slave"
+[    1.720768] 0x000004580000-0x0000045c0000 : "bosa"
+[    1.727449] 0x0000045c0000-0x000004600000 : "ri"
+[    1.734184] 0x000004600000-0x000004640000 : "flag"
+[    1.740883] 0x000004640000-0x000004680000 : "flagback"
+[    1.747952] 0x000004680000-0x000005080000 : "config"
+[    1.782167] 0x000005080000-0x00000d080000 : "openwrt_data"
+[    2.147349] 0x00000d080000-0x00000d680000 : "oopsfs"
+[    2.170382] 0x00000d680000-0x00000e080000 : "log"
+[    2.217709] xhci-mtk 1fb90000.usb: supply vbus not found, using dummy regulator
+[    2.225478] xhci-mtk 1fb90000.usb: supply vusb33 not found, using dummy regulator
+[    2.241422] xhci-mtk 1fb90000.usb: xHCI Host Controller
+[    2.246795] xhci-mtk 1fb90000.usb: new USB bus registered, assigned bus number 1
+[    2.258489] xhci-mtk 1fb90000.usb: hcc params 0x01400f98 hci version 0x110 quirks 0x0000000000200810
+[    2.267783] xhci-mtk 1fb90000.usb: irq 23, io mem 0x1fb90000
+[    2.273781] xhci-mtk 1fb90000.usb: xHCI Host Controller
+[    2.279071] xhci-mtk 1fb90000.usb: new USB bus registered, assigned bus number 2
+[    2.286556] xhci-mtk 1fb90000.usb: Host supports USB 3.1 Enhanced SuperSpeed
+[    2.294789] hub 1-0:1.0: USB hub found
+[    2.298753] hub 1-0:1.0: 2 ports detected
+[    2.304857] hub 2-0:1.0: USB hub found
+[    2.308758] hub 2-0:1.0: 1 port detected
+[    2.397180] ubi0: attaching mtd4
+[    2.616441] ubi0: scanning is finished
+[    2.695989] ubi0: attached mtd4 (name "ubi", size 30 MiB)
+[    2.701436] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    2.708349] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    2.715177] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    2.722153] ubi0: good PEBs: 242, bad PEBs: 0, corrupted PEBs: 0
+[    2.728189] ubi0: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    2.735446] ubi0: max/mean erase counter: 2/0, WL threshold: 4096, image sequence number: 1794158472
+[    2.744593] ubi0: available PEBs: 147, total reserved PEBs: 95, PEBs reserved for bad PEB handling: 25
+[    2.753964] ubi0: background thread "ubi_bgt0d" started, PID 458
+[    2.756282] block ubiblock0_0: created from ubi0:0(rootfs)
+[    2.772561] ubi1: attaching mtd12
+[    3.679828] ubi1: scanning is finished
+[    3.697134] ubi1: attached mtd12 (name "openwrt_data", size 128 MiB)
+[    3.703546] ubi1: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    3.710464] ubi1: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    3.717287] ubi1: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    3.724263] ubi1: good PEBs: 1024, bad PEBs: 0, corrupted PEBs: 0
+[    3.730391] ubi1: user volume: 2, internal volumes: 1, max. volumes count: 128
+[    3.737651] ubi1: max/mean erase counter: 4/1, WL threshold: 4096, image sequence number: 0
+[    3.746036] ubi1: available PEBs: 0, total reserved PEBs: 1024, PEBs reserved for bad PEB handling: 25
+[    3.755402] ubi1: background thread "ubi_bgt1d" started, PID 464
+[    5.400144] gpio_button_hotplug: loading out-of-tree module taints kernel.
+[   12.726598] UBIFS (ubi1:1): Mounting in unauthenticated mode
+[   12.732549] UBIFS (ubi1:1): background thread "ubifs_bgt1_1" started, PID 617
+[   12.788581] UBIFS (ubi1:1): recovery needed
+[   12.915992] UBIFS (ubi1:1): recovery completed
+[   12.920647] UBIFS (ubi1:1): UBIFS: mounted UBI device 1, volume 1, name "rootfs_data"
+[   12.928533] UBIFS (ubi1:1): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   12.938499] UBIFS (ubi1:1): FS size: 116817920 bytes (111 MiB, 920 LEBs), max 931 LEBs, journal size 5840896 bytes (5 MiB, 46 LEBs)
+[   12.950375] UBIFS (ubi1:1): reserved for root: 4952683 bytes (4836 KiB)
+[   12.957046] UBIFS (ubi1:1): media format: w5/r0 (latest is w5/r0), UUID 53F490ED-A6E0-4811-880D-714ED473D5C5, small LPT model
+[   12.990893] UBIFS (ubi1:1): un-mount UBI device 1
+[   12.995716] UBIFS (ubi1:1): background thread "ubifs_bgt1_1" stops
+[   13.008091] UBIFS (ubi1:1): Mounting in unauthenticated mode
+[   13.014055] UBIFS (ubi1:1): background thread "ubifs_bgt1_1" started, PID 620
+[   13.146449] UBIFS (ubi1:1): UBIFS: mounted UBI device 1, volume 1, name "rootfs_data"
+[   13.154337] UBIFS (ubi1:1): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   13.164294] UBIFS (ubi1:1): FS size: 116817920 bytes (111 MiB, 920 LEBs), max 931 LEBs, journal size 5840896 bytes (5 MiB, 46 LEBs)
+[   13.176192] UBIFS (ubi1:1): reserved for root: 4952683 bytes (4836 KiB)
+[   13.182857] UBIFS (ubi1:1): media format: w5/r0 (latest is w5/r0), UUID 53F490ED-A6E0-4811-880D-714ED473D5C5, small LPT model
+[   17.063517] econet_eth 1fb50000.ethernet: port 1 (LAN) registered with xx:xx:xx:xx:xx:xx
+[   17.099838] Loading modules backported from Linux version v7.2-0-g8d3ae59288f1
+[   17.258147] mt7530-mmio 1fb58000.ethernet-switch: no interrupt support
+[   17.404249] pci 0001:00:01.0: enabling device (0000 -> 0002)
+[   17.410176] mt7915e 0001:01:00.0: enabling device (0000 -> 0002)
+[   17.694358] mt7915e 0001:01:00.0: HW/SW Version: 0x8a108a10, Build Time: 20240429200716a
+[   17.695621] mt7530-mmio 1fb58000.ethernet-switch: configuring for fixed/internal link mode
+[   17.711273] mt7530-mmio 1fb58000.ethernet-switch: Link is Up - 1Gbps/Full - flow control rx/tx
+[   17.718349] mt7530-mmio 1fb58000.ethernet-switch wan (uninitialized): PHY [mt7530-0:09] driver [Generic PHY] (irq=POLL)
+[   17.737825] mt7530-mmio 1fb58000.ethernet-switch lan2 (uninitialized): PHY [mt7530-0:0a] driver [Generic PHY] (irq=POLL)
+[   17.755399] mt7530-mmio 1fb58000.ethernet-switch lan3 (uninitialized): PHY [mt7530-0:0b] driver [Generic PHY] (irq=POLL)
+[   17.771105] mt7530-mmio 1fb58000.ethernet-switch lan4 (uninitialized): PHY [mt7530-0:0c] driver [Generic PHY] (irq=POLL)
+[   17.785396] econet_eth 1fb50000.ethernet eth0: entered promiscuous mode
+[   17.792313] DSA: tree 0 setup
+[   18.008873] mt7915e 0001:01:00.0: WM Firmware Version: ____000000, Build Time: 20240429200752
+[   18.045591] mt7915e 0001:01:00.0: WA Firmware Version: DEV_000000, Build Time: 20240429200812
+[   18.166313] mt7915e 0001:01:00.0: registering led 'mt76-phy0'
+[   18.249222] mt7915e 0001:01:00.0: registering led 'mt76-phy1'
+[   27.027621] mt7530-mmio 1fb58000.ethernet-switch lan2: configuring for phy/internal link mode
+[   27.050030] mt7530-mmio 1fb58000.ethernet-switch lan2: entered allmulticast mode
+[   27.057690] econet_eth 1fb50000.ethernet eth0: entered allmulticast mode
+[   27.065498] mt7530-mmio 1fb58000.ethernet-switch lan2: entered promiscuous mode
+[   27.111476] mt7530-mmio 1fb58000.ethernet-switch lan3: configuring for phy/internal link mode
+[   27.134009] mt7530-mmio 1fb58000.ethernet-switch lan3: entered allmulticast mode
+[   27.142316] mt7530-mmio 1fb58000.ethernet-switch lan3: entered promiscuous mode
+[   27.162222] mt7530-mmio 1fb58000.ethernet-switch lan4: configuring for phy/internal link mode
+[   27.184281] mt7530-mmio 1fb58000.ethernet-switch lan4: entered allmulticast mode
+[   27.192558] mt7530-mmio 1fb58000.ethernet-switch lan4: entered promiscuous mode
+[   27.218788] mt7530-mmio 1fb58000.ethernet-switch wan: configuring for phy/internal link mode
+[   29.357752] mt7915e 0001:01:00.0 phy0-ap0: entered allmulticast mode
+[   29.364908] mt7915e 0001:01:00.0 phy0-ap0: entered promiscuous mode
+[   30.251423] mt7530-mmio 1fb58000.ethernet-switch lan3: Link is Up - 1Gbps/Full - flow control rx/tx
+[   30.938020] mt7915e 0001:01:00.0 phy1-ap0: entered allmulticast mode
+[   30.953867] mt7915e 0001:01:00.0 phy1-ap0: entered promiscuous mode

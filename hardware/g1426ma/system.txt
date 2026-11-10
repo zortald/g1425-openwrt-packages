@@ -1,0 +1,120 @@
+# OpenWrt 6.18.60 on Nokia G-1426-MA — /proc and system info
+
+### cat /proc/cpuinfo
+system type		: EcoNet-EN75xx
+machine			: Nokia G-1426-MA
+processor		: 0
+cpu model		: MIPS 1004Kc V2.15
+BogoMIPS		: 597.60
+wait instruction	: yes
+microsecond timers	: yes
+tlb_entries		: 32
+extra interrupt vector	: yes
+hardware watchpoint	: yes, count: 4, address/irw mask: [0x0ffc, 0x0ffc, 0x0ffb, 0x0ffb]
+isa			: mips1 mips2 mips32r1 mips32r2
+ASEs implemented	: mips16 dsp mt
+Options implemented	: tlb 4kex 4k_cache 32fpr prefetch mcheck ejtag llsc pindexed_dcache userlocal vint veic perf_cntr_intr_bit cdmm perf
+shadow register sets	: 1
+kscratch registers	: 0
+package			: 0
+core			: 0
+VPE			: 0
+VCED exceptions		: not available
+VCEI exceptions		: not available
+
+processor		: 1
+cpu model		: MIPS 1004Kc V2.15
+BogoMIPS		: 597.60
+wait instruction	: yes
+microsecond timers	: yes
+tlb_entries		: 32
+extra interrupt vector	: yes
+hardware watchpoint	: yes, count: 4, address/irw mask: [0x0ffc, 0x0ffc, 0x0ffb, 0x0ffb]
+isa			: mips1 mips2 mips32r1 mips32r2
+ASEs implemented	: mips16 dsp mt
+Options implemented	: tlb 4kex 4k_cache 32fpr prefetch mcheck ejtag llsc pindexed_dcache userlocal vint veic perf_cntr_intr_bit cdmm perf
+shadow register sets	: 1
+kscratch registers	: 0
+package			: 0
+core			: 0
+VPE			: 1
+VCED exceptions		: not available
+VCEI exceptions		: not available
+
+processor		: 2
+cpu model		: MIPS 1004Kc V2.15
+BogoMIPS		: 597.60
+wait instruction	: yes
+microsecond timers	: yes
+tlb_entries		: 32
+extra interrupt vector	: yes
+hardware watchpoint	: yes, count: 4, address/irw mask: [0x0ffc, 0x0ffc, 0x0ffb, 0x0ffb]
+isa			: mips1 mips2 mips32r1 mips32r2
+ASEs implemented	: mips16 dsp mt
+Options implemented	: tlb 4kex 4k_cache 32fpr prefetch mcheck ejtag llsc pindexed_dcache userlocal vint veic perf_cntr_intr_bit cdmm perf
+shadow register sets	: 1
+kscratch registers	: 0
+package			: 0
+core			: 1
+VPE			: 0
+VCED exceptions		: not available
+VCEI exceptions		: not available
+
+processor		: 3
+cpu model		: MIPS 1004Kc V2.15
+BogoMIPS		: 597.60
+wait instruction	: yes
+microsecond timers	: yes
+tlb_entries		: 32
+extra interrupt vector	: yes
+hardware watchpoint	: yes, count: 4, address/irw mask: [0x0ffc, 0x0ffc, 0x0ffb, 0x0ffb]
+isa			: mips1 mips2 mips32r1 mips32r2
+ASEs implemented	: mips16 dsp mt
+Options implemented	: tlb 4kex 4k_cache 32fpr prefetch mcheck ejtag llsc pindexed_dcache userlocal vint veic perf_cntr_intr_bit cdmm perf
+shadow register sets	: 1
+kscratch registers	: 0
+package			: 0
+core			: 1
+VPE			: 1
+VCED exceptions		: not available
+VCEI exceptions		: not available
+
+
+### free
+              total        used        free      shared  buff/cache   available
+Mem:         441748       80396      328048         440       33304      319904
+Swap:             0           0           0
+
+### cat /proc/mtd
+dev:    size   erasesize  name
+mtd0: 00040000 00020000 "bootloader"
+mtd1: 00040000 00020000 "romfile"
+mtd2: 02280000 00020000 "tclinux"
+mtd3: 00400000 00020000 "kernel"
+mtd4: 01e40000 00020000 "ubi"
+mtd5: 00040000 00020000 "factory"
+mtd6: 02280000 00020000 "tclinux_slave"
+mtd7: 00040000 00020000 "bosa"
+mtd8: 00040000 00020000 "ri"
+mtd9: 00040000 00020000 "flag"
+mtd10: 00040000 00020000 "flagback"
+mtd11: 00a00000 00020000 "config"
+mtd12: 08000000 00020000 "openwrt_data"
+mtd13: 00600000 00020000 "oopsfs"
+mtd14: 00a00000 00020000 "log"
+
+### lspci -nn
+0001:00:01.0 PCI bridge [0604]: MEDIATEK Corp. Device [14c3:0811] (rev 02)
+0001:01:00.0 Unclassified device [0002]: MEDIATEK Corp. MT7915A/MT7915D normal link PCIe Wi-Fi 6(802.11ax) 80MHz 4x4/2x2 Wireless Network Adapter [Filogic 615] [14c3:7915]
+
+### cat /etc/openwrt_release
+DISTRIB_ID='OpenWrt'
+DISTRIB_RELEASE='SNAPSHOT'
+DISTRIB_REVISION='r30000-7edc67adad'
+DISTRIB_TARGET='econet/en7528'
+DISTRIB_ARCH='mipsel_24kc'
+DISTRIB_DESCRIPTION='OpenWrt SNAPSHOT r30000-7edc67adad'
+DISTRIB_TAINTS=''
+
+### uname -a
+Linux G1426 6.18.60 #0 SMP Sun Nov  8 17:21:12 2026 mips GNU/Linux

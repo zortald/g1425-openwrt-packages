@@ -1,65 +1,98 @@
-# OpenWrt для Nokia G-1425-MA (EcoNet EN7526GT)
+# OpenWrt для Nokia G-1425-MA и G-1426-MA
 
-OpenWrt (snapshot, Linux 6.18) для GPON-терминала **Nokia G-1425-MA**.
-Работает из второго банка прошивки, заводская остаётся в первом как страховка.
+OpenWrt (snapshot, Linux 6.18) для двух GPON-терминалов Nokia. Это **разное железо**
+(другой процессор, порядок байт, Wi-Fi и раскладка флеша), поэтому у каждой модели своя
+прошивка. **Никогда не шейте образ одной модели на другую.** Заводская прошивка остаётся
+в другом банке флеша как страховка.
 
-English: [README.md](README.md) — там же подробная таблица железа, раскладка флеша и
-[дампы с проверенной ONU](hardware/).
+English: [README.md](README.md) — там же раскладка флеша и подробности сборки.
+[Дампы железа](hardware/) с проверенных ONU.
+
+## Какая у меня модель
+
+| | G-1425-MA | G-1426-MA |
+|---|---|---|
+| Процессор | EcoNet EN7526GT | EcoNet EN7528DU |
+| `/usr/hwconfig/` в стоке | — | `G1426MA/` (`BoardInnerID=G1426MA`) |
+| Загрузчик в консоли | `EN751221 ... free bootbase` | `EN7528 ... free bootbase` |
+| Wi-Fi в стоке | MT7603 + MT7662 (802.11ac) | MT7915 (Wi-Fi 6) |
+
+Другие ревизии и прошивки могут отличаться — проверьте перед прошивкой.
 
 ## Скачать
 
-**[g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin)**
-([описание и контрольные суммы](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40))
+| | G-1425-MA | G-1426-MA |
+|---|---|---|
+| Релиз | [v40](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40) | [g1426ma-v5](https://github.com/zortald/g1425-openwrt-packages/releases/tag/g1426ma-v5) |
+| Установка со стока | [g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin) | [g1426-openwrt-v5-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v5/g1426-openwrt-v5-web-upgrade.bin) |
+| Обновление из OpenWrt | — (переустановка со стока) | [g1426-openwrt-v5-sysupgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v5/g1426-openwrt-v5-sysupgrade.bin) (`sysupgrade -n`) |
 
 ## Железо
 
-Проверено на ONU с процессором **EcoNet EN7526GT** (семейство EN751221, MIPS 34Kc),
-512 МБ DDR3, 256 МБ SPI NAND (Micron MT29F2G01), Wi-Fi MT7603E (2.4 ГГц) + MT7662E (5 ГГц ac),
-4 × 1 GbE, USB 3.0, стоковая прошивка `3FE46343AFIA94`.
-Признаки: в вебе стока «GPON Gateway, Type: HGU», на чипе маркировка ECONET EN7526GT,
-загрузчик в консоли пишет `EN751221 ... free bootbase`.
+Каждая колонка проверена на одной ONU.
+
+| | G-1425-MA | G-1426-MA |
+|---|---|---|
+| Стоковая прошивка | `3FE46343AFIA94` | `3FE49218HJIJ62` (HJI.J62p05) |
+| Процессор | EN7526GT, MIPS 34Kc, 1 ядро, big-endian | EN7528DU, MIPS 1004Kc, 2 ядра × 2 потока, 900 МГц, little-endian |
+| Память / флеш | 512 МБ DDR3 / 256 МБ SPI NAND (Micron MT29F2G01) | 512 МБ DDR3 / 256 МБ SPI NAND (Micron MT29F2G01) |
+| Ethernet | 4 × 1 GbE (MT7530) | 4 × 1 GbE (встроенный свитч EN7528) |
+| Wi-Fi | MT7603E 2,4 ГГц + MT7662E 5 ГГц, 802.11ac | MT7915 2,4 + 5 ГГц, 802.11ax |
+| USB | 1 × USB 3.0 | 1 × USB 3.0 |
+| Консоль | J521 (GND/TX/RX), 3,3 В, 115200 8N1 | 3,3 В, 115200 8N1 |
+| Не поддерживается | GPON | GPON, телефонный порт |
+| Дампы | [hardware/](hardware/) | [hardware/g1426ma/](hardware/g1426ma/) |
 
 ## Установка
 
-1. Выньте кабель из порта 1 (у стока все порты — LAN с DHCP).
+1. Выньте кабель провайдера из порта 1 (у стока все порты — LAN с DHCP).
 2. Откройте `http://192.168.1.1/upgrade.cgi` (пункт меню скрыт, страница работает).
-3. Выберите файл, нажмите Upgrade. ONU запишет второй банк и перезагрузится.
-4. Если после первой загрузки нет сети — один раз перезагрузите по питанию.
+   G-1426-MA: сначала войдите (`telecomadmin` / `admintelecom`).
+3. Выберите файл **для своей модели**, нажмите Upgrade. Сток запишет другой банк,
+   переключит флаг загрузки и перезагрузится в OpenWrt.
+4. Только G-1425-MA: если после первой загрузки нет сети — один раз перезагрузите по питанию.
 
 Загрузчик и разделы стока не меняются.
+
+| | G-1425-MA | G-1426-MA |
+|---|---|---|
+| Сток работает из | банка A | банка B |
+| OpenWrt ставится в | банк B | банк A |
 
 ## По умолчанию
 
 - LAN `10.100.0.1/24` с DHCP, порты 2–4; порт 1 — WAN (DHCP-клиент)
-- Wi-Fi открытый, SSID `G1425`, 2.4 + 5 ГГц
+- Wi-Fi открытый, 2,4 + 5 ГГц: SSID `G1425` / `G1426`
 - LuCI: `http://10.100.0.1` — сразу задайте пароль root
-- USB-модемы, USB-накопители, WireGuard; модули ядра ставятся из этого репозитория
+- Часовой пояс Europe/Kyiv; USB-модемы, USB-накопители, WireGuard
+- Настройки и пакеты — в томе 1 бывшего стокового `/data` (~130 МБ / ~112 МБ),
+  том 0 оставлен стоку; при переключении на сток и обратно настройки сохраняются
+- Модули ядра ставятся из этого репозитория (`apk`), фид подключается сам
+
+## Фид пакетов
+
+| Папка | Модель | Архитектура | Прошивка |
+|---|---|---|---|
+| [af8c55194775dcae215a7df4c97d3160](af8c55194775dcae215a7df4c97d3160/) | G-1425-MA | `mips_24kc` | v38–v40 |
+| [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) | G-1426-MA | `mipsel_24kc` | g1426ma-v5 |
 
 ## Ограничения
 
-- Оптика (GPON) под OpenWrt не работает.
-- Обновление — только через веб стока (sysupgrade пока нет).
+| | G-1425-MA | G-1426-MA |
+|---|---|---|
+| GPON | не работает | не работает |
+| Процессор | одно ядро | все четыре потока |
+| Обновление | переустановка через веб стока | `sysupgrade` |
+| Прочее | — | телефонный порт не работает; Wi-Fi использует одну из двух PCIe-линий MT7915 |
 
 ## Вернуться в сток
 
+G-1425-MA, из OpenWrt:
+
     printf '\0\0\0\0\0\0\0\0\0\0\0\001\0\0\0\016' > /tmp/f; mtd write /tmp/f flag; reboot
 
+G-1426-MA, из OpenWrt:
+
+    en75_chboot factory; reboot
+
 Если OpenWrt не загружается, загрузчик сам вернёт сток после исчерпания счётчика попыток.
-
-## Nokia G-1426-MA (EcoNet EN7528, little-endian)
-
-Другая аппаратная ревизия с похожим названием: EN7528DU, 4 ядра MIPS 1004Kc, little-endian,
-Wi-Fi 6 MT7915 (2,4 + 5 ГГц), 4 × 1 GbE, USB 3.0, SPI NAND 256 МБ. Сток здесь работает из
-банка B, OpenWrt ставится в банк A. **Образы G-1425 на ней не работают, и наоборот.**
-Перед прошивкой проверьте `BoardInnerID=G1426MA` в `/usr/hwconfig/` стока.
-
-- Скачать: [g1426ma-v5](https://github.com/zortald/g1425-openwrt-packages/releases/tag/g1426ma-v5) — `g1426-openwrt-v5-web-upgrade.bin` для
-  веб-обновления стока (`http://192.168.1.1/upgrade.cgi`, вход `telecomadmin`) и
-  `…-sysupgrade.bin` для обновления из OpenWrt (`sysupgrade -n`).
-- Проверено на стоке `3FE49218HJIJ62` (HJI.J62p05).
-- По умолчанию: LAN `10.100.0.1`, WAN — порт 1, открытый Wi-Fi `G1426` в обоих диапазонах.
-- Настройки хранятся в томе 1 бывшего стокового `/data` (~112 МБ). Калибровка Wi-Fi
-  копируется из стокового раздела config при первой загрузке.
-- Вернуться в сток: `en75_chboot factory; reboot`.
-- Не работает: второй PCIe-порт (MT7915 работает по одной линии), GPON, телефонный порт.
-- Фид пакетов: папка [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) (`mipsel_24kc`).

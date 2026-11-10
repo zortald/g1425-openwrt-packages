@@ -1,0 +1,52 @@
+# Bootloader (UART, 115200 8N1) — Nokia G-1426-MA, booting OpenWrt from bank A
+
+KGD IC
+Xtal:1
+DDR3 init.
+DRAMC init done. 
+Calculate size.
+DRAM size=512MB
+Set new TRFC.
+ddr-1200
+7528DRAMC V1.8 (0)
+Press 'x' or 'b' key in 1 secs to enter or skip bootloader upgrade.
+led_init ... 
+led_all_mode ... 
+EN7528 at Thu Sep 30 15:48:59 CST 2021 version 1.1 free bootbase
+Set SPI Clock to 40 Mhz
+spi_nand_probe: mfr_id=0x2c, dev_id=0x24
+Using Flash ECC.
+Detected SPI NAND Flash : _SPI_NAND_DEVICE_ID_MT29F2G01, Flash Size=0x10000000
+bmt pool size: 143 
+BMT & BBT Init Success 
+Invalid NSB Power GPIO, just return and don't turn on Power LED 
+TR068_LED ...
+  GE Rext AnaCal Done! (1)(0x1f)  
+Press enter in 3 secs to enter boot command mode.
+..............................
+==> 1650
+Invalid NSB Power GPIO, just return and don't turn on Power LED 
+********cur flag info*************
+active = 0
+curimg = 1
+startok = 1
+count = 14
+********new flag info*************
+active = 0
+curimg = 0
+startok = 0
+count = 14
+magic=0x33524448
+len=13762560
+ main tclinux.bin crc check OK!
+#######select0  0x80000
+Decompress to 80002000 free_mem_ptr=83000000 free_mem_ptr_end=807B0000
+from main
+*********run kernel 0********
+trx_header_len = 256
+kernel_size = 4259840
+Uncompressing [LZMA] ...  done.
+zimage at:     80023390 803B9C54
+Uncompressing Linux at load address 81000000
+Copy device tree to address  81C048E0
+Now, booting the kernel...

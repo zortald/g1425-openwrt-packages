@@ -1,21 +1,44 @@
-<!doctype html><meta charset="utf-8"><title>OpenWrt for Nokia G-1425-MA</title>
-<style>body{font-family:sans-serif;max-width:56em;margin:2em auto;padding:0 1em;line-height:1.45}code{background:#eee;padding:.1em .3em}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:.3em .6em;text-align:left}</style>
-<h1>OpenWrt for Nokia G-1425-MA (EcoNet EN7526GT)</h1>
-<p>OpenWrt snapshot (Linux 6.18) for the Nokia G-1425-MA GPON ONT. Runs from the second firmware bank; stock stays in the first bank as a fallback.</p>
-<p><b>Download:</b> <a href="https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin">g1425-openwrt-v40-web-upgrade.bin</a> (<a href="https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40">release notes</a>) ·
-<b>Docs:</b> <a href="https://github.com/zortald/g1425-openwrt-packages#readme">English</a>, <a href="https://github.com/zortald/g1425-openwrt-packages/blob/main/README.ru.md">Русский</a> ·
-<b>Hardware dumps:</b> <a href="https://github.com/zortald/g1425-openwrt-packages/tree/main/hardware">bootloader, dmesg, /proc</a></p>
+<!doctype html><meta charset="utf-8"><title>OpenWrt for Nokia G-1425-MA and G-1426-MA</title>
+<style>body{font-family:sans-serif;max-width:60em;margin:2em auto;padding:0 1em;line-height:1.45}code{background:#eee;padding:.1em .3em}table{border-collapse:collapse;margin-bottom:1em}td,th{border:1px solid #ccc;padding:.3em .6em;text-align:left;vertical-align:top}th{background:#f4f4f4}.warn{background:#fff3cd;padding:.5em .8em;border-left:4px solid #e0a800}</style>
+<h1>OpenWrt for Nokia G-1425-MA and G-1426-MA</h1>
+<p>OpenWrt snapshot (Linux 6.18) for two Nokia GPON ONTs. The stock firmware stays in the other flash bank as a fallback.</p>
+<p class="warn">The two models are <b>different hardware</b> (SoC, CPU byte order, Wi-Fi, flash layout). Each has its own firmware — <b>never flash one model's image onto the other.</b></p>
+<p><b>Docs:</b> <a href="https://github.com/zortald/g1425-openwrt-packages#readme">English</a>, <a href="https://github.com/zortald/g1425-openwrt-packages/blob/main/README.ru.md">Русский</a> ·
+<b>Releases:</b> <a href="https://github.com/zortald/g1425-openwrt-packages/releases">all</a></p>
+
+<h2>Which one do I have</h2>
+<table>
+<tr><th></th><th>G-1425-MA</th><th>G-1426-MA</th></tr>
+<tr><td>SoC</td><td>EcoNet EN7526GT</td><td>EcoNet EN7528DU</td></tr>
+<tr><td>Stock <code>/usr/hwconfig/</code></td><td>—</td><td><code>G1426MA/</code></td></tr>
+<tr><td>Bootloader banner (serial)</td><td><code>EN751221 ... free bootbase</code></td><td><code>EN7528 ... free bootbase</code></td></tr>
+<tr><td>Wi-Fi in stock</td><td>MT7603 + MT7662 (802.11ac)</td><td>MT7915 (Wi-Fi 6)</td></tr>
+</table>
+
+<h2>Download</h2>
+<table>
+<tr><th></th><th>G-1425-MA</th><th>G-1426-MA</th></tr>
+<tr><td>Release</td><td><a href="https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40">v40</a></td><td><a href="https://github.com/zortald/g1425-openwrt-packages/releases/tag/g1426ma-v5">g1426ma-v5</a></td></tr>
+<tr><td>Install from stock<br>(<code>http://192.168.1.1/upgrade.cgi</code>)</td><td><a href="https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin">g1425-openwrt-v40-web-upgrade.bin</a></td><td><a href="https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v5/g1426-openwrt-v5-web-upgrade.bin">g1426-openwrt-v5-web-upgrade.bin</a></td></tr>
+<tr><td>Update from OpenWrt</td><td>— (reinstall from stock)</td><td><a href="https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v5/g1426-openwrt-v5-sysupgrade.bin">g1426-openwrt-v5-sysupgrade.bin</a> (<code>sysupgrade -n</code>)</td></tr>
+<tr><td>Stock runs from / OpenWrt goes to</td><td>bank A / bank B</td><td>bank B / bank A</td></tr>
+</table>
+
 <h2>Verified hardware</h2>
 <table>
-<tr><td>SoC</td><td>EcoNet EN7526GT (EN751221), MIPS 34Kc, big-endian</td></tr>
-<tr><td>RAM / Flash</td><td>512 MB DDR3 / 256 MB SPI NAND (Micron MT29F2G01)</td></tr>
-<tr><td>Wi-Fi</td><td>MT7603E 2.4 GHz + MT7662E 5 GHz 802.11ac 2×2</td></tr>
-<tr><td>Ethernet / USB</td><td>4 × 1 GbE (MT7530) / 1 × USB 3.0</td></tr>
-<tr><td>Stock firmware</td><td>3FE46343AFIA94</td></tr>
+<tr><th></th><th>G-1425-MA</th><th>G-1426-MA</th></tr>
+<tr><td>Stock firmware</td><td>3FE46343AFIA94</td><td>3FE49218HJIJ62</td></tr>
+<tr><td>CPU</td><td>MIPS 34Kc, 1 core, big-endian</td><td>MIPS 1004Kc, 2 cores × 2 threads, little-endian</td></tr>
+<tr><td>RAM / Flash</td><td>512 MB DDR3 / 256 MB SPI NAND (Micron MT29F2G01)</td><td>512 MB DDR3 / 256 MB SPI NAND (Micron MT29F2G01)</td></tr>
+<tr><td>Wi-Fi</td><td>MT7603E 2.4 GHz + MT7662E 5 GHz, 802.11ac</td><td>MT7915 2.4 + 5 GHz, 802.11ax</td></tr>
+<tr><td>Ethernet / USB</td><td>4 × 1 GbE (MT7530) / 1 × USB 3.0</td><td>4 × 1 GbE (EN7528 switch) / 1 × USB 3.0</td></tr>
+<tr><td>Not supported</td><td>GPON</td><td>GPON, phone port</td></tr>
+<tr><td>Hardware dumps</td><td><a href="https://github.com/zortald/g1425-openwrt-packages/tree/main/hardware">bootloader, dmesg, /proc</a></td><td><a href="https://github.com/zortald/g1425-openwrt-packages/tree/main/hardware/g1426ma">bootloader, dmesg, /proc</a></td></tr>
 </table>
+
 <h2>Package feed</h2>
 <p>Kernel modules and target packages; one folder per kernel build. The firmware adds its folder to apk at first boot:
 <code>https://zortald.github.io/g1425-openwrt-packages/&lt;kernel-hash&gt;/packages.adb</code></p>
-<table><tr><th>Folder</th><th>Kernel</th><th>Packages</th><th>Firmware</th></tr>
-<tr><td><a href="af8c55194775dcae215a7df4c97d3160/">af8c55194775dcae215a7df4c97d3160</a></td><td>6.18.60~af8c55194775dcae215a7df4c97d3160-r1</td><td>1121</td><td>v38–v40</td></tr>
-<tr><td><a href="6f45af18e396b5d378e1a1baaebc5a16/">6f45af18e396b5d378e1a1baaebc5a16</a></td><td>6.18.60~6f45af18e396b5d378e1a1baaebc5a16-r1 (G-1426-MA, mipsel_24kc)</td><td>1126</td><td>g1426ma-v5</td></tr></table>
+<table><tr><th>Folder</th><th>Model</th><th>Architecture</th><th>Kernel</th><th>Packages</th><th>Firmware</th></tr>
+<tr><td><a href="af8c55194775dcae215a7df4c97d3160/">af8c55194775dcae215a7df4c97d3160</a></td><td>G-1425-MA</td><td>mips_24kc</td><td>6.18.60~af8c5519…-r1</td><td>1121</td><td>v38–v40</td></tr>
+<tr><td><a href="6f45af18e396b5d378e1a1baaebc5a16/">6f45af18e396b5d378e1a1baaebc5a16</a></td><td>G-1426-MA</td><td>mipsel_24kc</td><td>6.18.60~6f45af18…-r1</td><td>1126</td><td>g1426ma-v5</td></tr></table>
