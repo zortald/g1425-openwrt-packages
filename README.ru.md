@@ -45,3 +45,21 @@ English: [README.md](README.md) — там же подробная таблиц�
     printf '\0\0\0\0\0\0\0\0\0\0\0\001\0\0\0\016' > /tmp/f; mtd write /tmp/f flag; reboot
 
 Если OpenWrt не загружается, загрузчик сам вернёт сток после исчерпания счётчика попыток.
+
+## Nokia G-1426-MA (EcoNet EN7528, little-endian)
+
+Другая аппаратная ревизия с похожим названием: EN7528DU, 4 ядра MIPS 1004Kc, little-endian,
+Wi-Fi 6 MT7915 (2,4 + 5 ГГц), 4 × 1 GbE, USB 3.0, SPI NAND 256 МБ. Сток здесь работает из
+банка B, OpenWrt ставится в банк A. **Образы G-1425 на ней не работают, и наоборот.**
+Перед прошивкой проверьте `BoardInnerID=G1426MA` в `/usr/hwconfig/` стока.
+
+- Скачать: [g1426ma-v5](https://github.com/zortald/g1425-openwrt-packages/releases/tag/g1426ma-v5) — `g1426-openwrt-v5-web-upgrade.bin` для
+  веб-обновления стока (`http://192.168.1.1/upgrade.cgi`, вход `telecomadmin`) и
+  `…-sysupgrade.bin` для обновления из OpenWrt (`sysupgrade -n`).
+- Проверено на стоке `3FE49218HJIJ62` (HJI.J62p05).
+- По умолчанию: LAN `10.100.0.1`, WAN — порт 1, открытый Wi-Fi `G1426` в обоих диапазонах.
+- Настройки хранятся в томе 1 бывшего стокового `/data` (~112 МБ). Калибровка Wi-Fi
+  копируется из стокового раздела config при первой загрузке.
+- Вернуться в сток: `en75_chboot factory; reboot`.
+- Не работает: второй PCIe-порт (MT7915 работает по одной линии), GPON, телефонный порт.
+- Фид пакетов: папка [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) (`mipsel_24kc`).

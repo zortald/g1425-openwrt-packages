@@ -117,6 +117,7 @@ signed with the build key shipped in the firmware.
 | Folder | Kernel | Firmware |
 |---|---|---|
 | [af8c55194775dcae215a7df4c97d3160](af8c55194775dcae215a7df4c97d3160/) | 6.18.60~af8c5519…-r1 | v38–v40 |
+| [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) | 6.18.60~6f45af18…-r1 (G-1426-MA, `mipsel_24kc`) | g1426ma-v5 |
 
 ## Back to stock
 
@@ -136,6 +137,27 @@ bootloader asks for the vendor login first.
 - No `sysupgrade` yet: new versions are installed from stock via the web upgrade.
 - Snapshot build: userspace packages from the official feed may occasionally need newer
   libraries than the firmware has.
+
+## Nokia G-1426-MA (EcoNet EN7528, little-endian)
+
+A different hardware revision sold under a similar name: EN7528DU, 4 × MIPS 1004Kc,
+little-endian, MT7915 Wi-Fi 6 (2.4 + 5 GHz), 4 × 1 GbE, USB 3.0, 256 MB SPI NAND.
+The stock firmware runs from bank B here, so OpenWrt goes into bank A. **The G-1425
+images above do not work on it, and these do not work on the G-1425.** Check
+`BoardInnerID=G1426MA` in the stock `/usr/hwconfig/` before flashing.
+
+- Download: [g1426ma-v5](https://github.com/zortald/g1425-openwrt-packages/releases/tag/g1426ma-v5) — `g1426-openwrt-v5-web-upgrade.bin` for the
+  stock web upgrade (`http://192.168.1.1/upgrade.cgi`, login `telecomadmin`), and
+  `…-sysupgrade.bin` for updates from OpenWrt (`sysupgrade -n`).
+- Verified on stock `3FE49218HJIJ62` (HJI.J62p05). The stock updater checks that the
+  image lists the board (`G1426MA`) or part number prefix (`3FE49169`).
+- Defaults: LAN `10.100.0.1`, WAN = switch port 1, open Wi-Fi `G1426` on both bands.
+- Layout: bank A `0x80000` = header + kernel (4 MiB) + UBI rootfs; the overlay is volume 1
+  of the former stock `/data` (~112 MiB), volume 0 stays for stock. The unit's Wi-Fi
+  calibration is copied from the stock config partition on the first boot.
+- Back to stock: `en75_chboot factory; reboot`.
+- Not working: second PCIe port (the MT7915 runs over one link), GPON, phone port.
+- Package feed: folder [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) (`mipsel_24kc`).
 
 ## Build
 
