@@ -185,7 +185,7 @@
     "kmod-ebtables-ipv4": "6.18.60-r1",
     "kmod-ebtables-ipv6": "6.18.60-r1",
     "kmod-ebtables-watchers": "6.18.60-r1",
-    "kmod-econet-eth": "6.18.60.2026.10.29~eeaf20be-r1",
+    "kmod-econet-eth": "6.18.60.2026.10.29~eeaf20be-r2",
     "kmod-eeprom-93cx6": "6.18.60-r1",
     "kmod-eeprom-at24": "6.18.60-r1",
     "kmod-eeprom-at25": "6.18.60-r1",

@@ -23,10 +23,10 @@ English: [README.md](README.md) — там же раскладка флеша и
 
 | | G-1425-MA | G-1426-MA |
 |---|---|---|
-| Релиз | [v40](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40) | [g1426ma-v5](https://github.com/zortald/g1425-openwrt-packages/releases/tag/g1426ma-v5) |
-| Установка со стока | [g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin) | [g1426-openwrt-v5-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v5/g1426-openwrt-v5-web-upgrade.bin) |
+| Релиз | [v40](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40) | [g1426ma-v6](https://github.com/zortald/g1425-openwrt-packages/releases/tag/g1426ma-v6) |
+| Установка со стока | [g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin) | [g1426-openwrt-v6-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v6/g1426-openwrt-v6-web-upgrade.bin) |
 | Предварительный релиз (на железе ещё не проверен) | [v41](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v41): калибровка 5 ГГц из стока, usteer, первый `sysupgrade` | — |
-| Обновление из OpenWrt | — (переустановка со стока; `sysupgrade` начиная с v41) | [g1426-openwrt-v5-sysupgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v5/g1426-openwrt-v5-sysupgrade.bin) (`sysupgrade -n`) |
+| Обновление из OpenWrt | — (переустановка со стока; `sysupgrade` начиная с v41) | [g1426-openwrt-v6-sysupgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v6/g1426-openwrt-v6-sysupgrade.bin) (`sysupgrade -n`) |
 
 ## Железо
 
@@ -65,6 +65,7 @@ English: [README.md](README.md) — там же раскладка флеша и
 - LAN `10.100.0.1/24` с DHCP, порты 2–4; порт 1 — WAN (DHCP-клиент)
 - Wi-Fi открытый, 2,4 + 5 ГГц: SSID `G1425` / `G1426`
 - LuCI: `http://10.100.0.1` — сразу задайте пароль root
+- G-1426-MA: аппаратный NAT (PPE) для проводных LAN↔WAN, ~900 Мбит/с без нагрузки на процессор
 - Часовой пояс Europe/Kyiv; USB-модемы, USB-накопители, WireGuard
 - Настройки и пакеты — в томе 1 бывшего стокового `/data` (~130 МБ / ~112 МБ),
   том 0 оставлен стоку; при переключении на сток и обратно настройки сохраняются
@@ -76,7 +77,7 @@ English: [README.md](README.md) — там же раскладка флеша и
 |---|---|---|---|
 | [af8c55194775dcae215a7df4c97d3160](af8c55194775dcae215a7df4c97d3160/) | G-1425-MA | `mips_24kc` | v38–v40 |
 | [7d991811584158991fd8b3ea9fb13c0b](7d991811584158991fd8b3ea9fb13c0b/) | G-1425-MA | `mips_24kc` | v41 |
-| [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) | G-1426-MA | `mipsel_24kc` | g1426ma-v5 |
+| [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) | G-1426-MA | `mipsel_24kc` | g1426ma-v5, g1426ma-v6 |
 
 ## Ограничения
 

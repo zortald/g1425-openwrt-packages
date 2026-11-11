@@ -29,10 +29,10 @@ Other revisions or stock firmwares may differ again — check before flashing.
 
 | | G-1425-MA | G-1426-MA |
 |---|---|---|
-| Release | [v40](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40) | [g1426ma-v5](https://github.com/zortald/g1425-openwrt-packages/releases/tag/g1426ma-v5) |
-| Install from stock | [g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin) | [g1426-openwrt-v5-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v5/g1426-openwrt-v5-web-upgrade.bin) |
+| Release | [v40](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40) | [g1426ma-v6](https://github.com/zortald/g1425-openwrt-packages/releases/tag/g1426ma-v6) |
+| Install from stock | [g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin) | [g1426-openwrt-v6-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v6/g1426-openwrt-v6-web-upgrade.bin) |
 | Pre-release (not yet tested on hardware) | [v41](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v41): 5 GHz calibration from stock, usteer, first `sysupgrade` | — |
-| Update from OpenWrt | — (reinstall from stock; `sysupgrade` from v41) | [g1426-openwrt-v5-sysupgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v5/g1426-openwrt-v5-sysupgrade.bin) (`sysupgrade -n`) |
+| Update from OpenWrt | — (reinstall from stock; `sysupgrade` from v41) | [g1426-openwrt-v6-sysupgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v6/g1426-openwrt-v6-sysupgrade.bin) (`sysupgrade -n`) |
 
 ## Hardware
 
@@ -81,6 +81,7 @@ Same on both models unless noted.
 | Wi-Fi | **open** network, 2.4 + 5 GHz, 802.11k/v, country UA: `G1425` / `G1426` |
 | MAC | G-1425-MA: WAN = factory MAC, LAN = −1, Wi-Fi = +1 / +2. G-1426-MA: LAN = factory MAC, WAN = +8, Wi-Fi = +2 / +3 |
 | Web UI | LuCI at `http://10.100.0.1` — **set a root password first** |
+| Hardware NAT | G-1426-MA: routed LAN↔WAN flows offloaded to the PPE (~900 Mbit/s, CPU idle) |
 | Time zone | Europe/Kyiv |
 | Extras | ModemManager + usb-modeswitch (USB modems), USB storage (ext4/vfat), WireGuard |
 
@@ -144,7 +145,7 @@ the build key shipped in the firmware.
 |---|---|---|---|---|
 | [af8c55194775dcae215a7df4c97d3160](af8c55194775dcae215a7df4c97d3160/) | G-1425-MA | `mips_24kc` | 6.18.60~af8c5519…-r1 | v38–v40 |
 | [7d991811584158991fd8b3ea9fb13c0b](7d991811584158991fd8b3ea9fb13c0b/) | G-1425-MA | `mips_24kc` | 6.18.60~7d991811…-r1 | v41 |
-| [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) | G-1426-MA | `mipsel_24kc` | 6.18.60~6f45af18…-r1 | g1426ma-v5 |
+| [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) | G-1426-MA | `mipsel_24kc` | 6.18.60~6f45af18…-r1 | g1426ma-v5, g1426ma-v6 |
 
 ## Back to stock
 
@@ -183,4 +184,5 @@ OpenWrt snapshot, kernel 6.18.60.
   stock bootloader and updater.
 - G-1426-MA: target `econet/en7528` (upstream) with a device definition: device tree,
   partition map, HDR3 image header, stock-updater image format, BMT reserve size
-  (7 %, `econet,pool-good-block-percent`).
+  (7 %, `econet,pool-good-block-percent`), and patches to the `econet_eth` driver (RX alignment,
+  hardware NAT through the built-in switch, larger RX ring).
