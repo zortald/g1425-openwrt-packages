@@ -7,9 +7,9 @@ flash bank as a fallback.
 
 This repository holds:
 
-- the firmware images for the stock web upgrade — see [Releases](https://github.com/zortald/g1425-openwrt-packages/releases);
+- the firmware images for the stock web upgrade — see [Releases](https://github.com/zortald/gpon_openwrt_packages/releases);
 - the **package feed** with kernel modules and target packages for each build
-  (served at `https://zortald.github.io/g1425-openwrt-packages/`);
+  (served at `https://zortald.github.io/gpon_openwrt_packages/`);
 - [hardware dumps](hardware/) from the units the firmware was verified on.
 
 Русская версия: [README.ru.md](README.ru.md)
@@ -29,10 +29,10 @@ Other revisions or stock firmwares may differ again — check before flashing.
 
 | | G-1425-MA | G-1426-MA |
 |---|---|---|
-| Release | [v40](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v40) | [g1426ma-v6](https://github.com/zortald/g1425-openwrt-packages/releases/tag/g1426ma-v6) |
-| Install from stock | [g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin) | [g1426-openwrt-v6-web-upgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v6/g1426-openwrt-v6-web-upgrade.bin) |
-| Pre-release (not yet tested on hardware) | [v41](https://github.com/zortald/g1425-openwrt-packages/releases/tag/v41): 5 GHz calibration from stock, usteer, first `sysupgrade` | — |
-| Update from OpenWrt | — (reinstall from stock; `sysupgrade` from v41) | [g1426-openwrt-v6-sysupgrade.bin](https://github.com/zortald/g1425-openwrt-packages/releases/download/g1426ma-v6/g1426-openwrt-v6-sysupgrade.bin) (`sysupgrade -n`) |
+| Release | [v40](https://github.com/zortald/gpon_openwrt_packages/releases/tag/v40) | [g1426ma-v6](https://github.com/zortald/gpon_openwrt_packages/releases/tag/g1426ma-v6) |
+| Install from stock | [g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/gpon_openwrt_packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin) | [g1426-openwrt-v6-web-upgrade.bin](https://github.com/zortald/gpon_openwrt_packages/releases/download/g1426ma-v6/g1426-openwrt-v6-web-upgrade.bin) |
+| Pre-release (not yet tested on hardware) | [v41](https://github.com/zortald/gpon_openwrt_packages/releases/tag/v41): 5 GHz calibration from stock, usteer, first `sysupgrade` | — |
+| Update from OpenWrt | — (reinstall from stock; `sysupgrade` from v41) | [g1426-openwrt-v6-sysupgrade.bin](https://github.com/zortald/gpon_openwrt_packages/releases/download/g1426ma-v6/g1426-openwrt-v6-sysupgrade.bin) (`sysupgrade -n`) |
 
 ## Hardware
 
@@ -136,7 +136,7 @@ Kernel modules only install on the exact kernel they were built with, so there i
 folder per kernel build, named by the kernel package hash. The firmware adds its folder
 to apk at first boot:
 
-    https://zortald.github.io/g1425-openwrt-packages/<kernel-hash>/packages.adb
+    https://zortald.github.io/gpon_openwrt_packages/<kernel-hash>/packages.adb
 
 Userspace packages come from the official snapshot feeds. Packages here are signed with
 the build key shipped in the firmware.
