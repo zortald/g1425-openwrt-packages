@@ -176,7 +176,8 @@ newer libraries than the firmware has.
 
 ## Build
 
-OpenWrt snapshot, kernel 6.18.60.
+Source: [zortald/gpon_openwrt](https://github.com/zortald/gpon_openwrt) (fork of OpenWrt; build
+configs in `configs/`). OpenWrt snapshot, kernel 6.18.60.
 
 - G-1425-MA: target `econet/en751221` with
   [openwrt/openwrt#25330](https://github.com/openwrt/openwrt/pull/25330) (EcoNet DSA switch

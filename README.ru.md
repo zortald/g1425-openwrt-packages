@@ -6,6 +6,7 @@ OpenWrt (snapshot, Linux 6.18) для двух GPON-терминалов Nokia. 
 в другом банке флеша как страховка.
 
 English: [README.md](README.md) — там же раскладка флеша и подробности сборки.
+Исходники: [zortald/gpon_openwrt](https://github.com/zortald/gpon_openwrt) (форк OpenWrt, конфиги сборки в `configs/`).
 [Дампы железа](hardware/) с проверенных ONU.
 
 ## Какая у меня модель
