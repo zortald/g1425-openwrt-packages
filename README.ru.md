@@ -24,10 +24,10 @@ English: [README.md](README.md) — там же раскладка флеша и
 
 | | G-1425-MA | G-1426-MA |
 |---|---|---|
-| Релиз | [v40](https://github.com/zortald/gpon_openwrt_packages/releases/tag/v40) | [g1426ma-v6](https://github.com/zortald/gpon_openwrt_packages/releases/tag/g1426ma-v6) |
-| Установка со стока | [g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/gpon_openwrt_packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin) | [g1426-openwrt-v6-web-upgrade.bin](https://github.com/zortald/gpon_openwrt_packages/releases/download/g1426ma-v6/g1426-openwrt-v6-web-upgrade.bin) |
+| Релиз | [v40](https://github.com/zortald/gpon_openwrt_packages/releases/tag/v40) | [g1426ma-v8](https://github.com/zortald/gpon_openwrt_packages/releases/tag/g1426ma-v8) |
+| Установка со стока | [g1425-openwrt-v40-web-upgrade.bin](https://github.com/zortald/gpon_openwrt_packages/releases/download/v40/g1425-openwrt-v40-web-upgrade.bin) | [g1426-openwrt-v8-web-upgrade.bin](https://github.com/zortald/gpon_openwrt_packages/releases/download/g1426ma-v8/g1426-openwrt-v8-web-upgrade.bin) |
 | Предварительный релиз (на железе ещё не проверен) | [v41](https://github.com/zortald/gpon_openwrt_packages/releases/tag/v41): калибровка 5 ГГц из стока, usteer, первый `sysupgrade` | — |
-| Обновление из OpenWrt | — (переустановка со стока; `sysupgrade` начиная с v41) | [g1426-openwrt-v6-sysupgrade.bin](https://github.com/zortald/gpon_openwrt_packages/releases/download/g1426ma-v6/g1426-openwrt-v6-sysupgrade.bin) (`sysupgrade -n`) |
+| Обновление из OpenWrt | — (переустановка со стока; `sysupgrade` начиная с v41) | [g1426-openwrt-v8-sysupgrade.bin](https://github.com/zortald/gpon_openwrt_packages/releases/download/g1426ma-v8/g1426-openwrt-v8-sysupgrade.bin) (`sysupgrade -n`) |
 
 ## Железо
 
@@ -78,7 +78,7 @@ English: [README.md](README.md) — там же раскладка флеша и
 |---|---|---|---|
 | [af8c55194775dcae215a7df4c97d3160](af8c55194775dcae215a7df4c97d3160/) | G-1425-MA | `mips_24kc` | v38–v40 |
 | [7d991811584158991fd8b3ea9fb13c0b](7d991811584158991fd8b3ea9fb13c0b/) | G-1425-MA | `mips_24kc` | v41 |
-| [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) | G-1426-MA | `mipsel_24kc` | g1426ma-v5, g1426ma-v6 |
+| [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) | G-1426-MA | `mipsel_24kc` | g1426ma-v5, v6, v8 |
 
 ## Ограничения
 
@@ -87,7 +87,7 @@ English: [README.md](README.md) — там же раскладка флеша и
 | GPON | не работает | не работает |
 | Процессор | одно ядро | все четыре потока |
 | Обновление | переустановка через веб стока; `sysupgrade` с v41 (предварительный) | `sysupgrade` |
-| Прочее | — | телефонный порт не работает; Wi-Fi использует одну из двух PCIe-линий MT7915 |
+| Прочее | — | телефонный порт не работает |
 
 ## Вернуться в сток
 
