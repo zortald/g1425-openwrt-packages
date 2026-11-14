@@ -146,7 +146,6 @@ the build key shipped in the firmware.
 | [af8c55194775dcae215a7df4c97d3160](af8c55194775dcae215a7df4c97d3160/) | G-1425-MA | `mips_24kc` | 6.18.60~af8c5519…-r1 | v38–v40 |
 | [7d991811584158991fd8b3ea9fb13c0b](7d991811584158991fd8b3ea9fb13c0b/) | G-1425-MA | `mips_24kc` | 6.18.60~7d991811…-r1 | v41 |
 | [6f45af18e396b5d378e1a1baaebc5a16](6f45af18e396b5d378e1a1baaebc5a16/) | G-1426-MA | `mipsel_24kc` | 6.18.60~6f45af18…-r1 | g1426ma-v5, v6, v8 |
-| [8cbb4f07c06643dc1fa2e8ca65339cb6](8cbb4f07c06643dc1fa2e8ca65339cb6/) | G-140W-C | `mips_24kc` | 6.18.60~8cbb4f07…-r1 | G-140W-C test builds (dual-VPE kernel) |
 
 ## Back to stock
 
